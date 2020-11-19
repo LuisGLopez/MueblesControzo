@@ -20,7 +20,11 @@ namespace BancoControzo
         private void btnLogin_Click(object sender, EventArgs e)
         {
             using (Administrar nuevaVentana = new Administrar())
+            {
                 nuevaVentana.ShowDialog();
+            }
+                
+
         }
     }
 }

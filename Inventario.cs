@@ -10,17 +10,12 @@ using System.Windows.Forms;
 
 namespace BancoControzo
 {
-    public partial class Ventas : Form
+    public partial class Inventario : Form
     {
-        public Ventas()
+        public Inventario()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBoxButtons botones = MessageBoxButtons.OKCancel;
-            MessageBox.Show("Detalles de venta.\nTotal: **", "Terminar Venta", botones);
-        }
     }
 }
