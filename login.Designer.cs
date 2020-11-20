@@ -36,6 +36,7 @@ namespace BancoControzo
             this.label4 = new System.Windows.Forms.Label();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -96,13 +97,25 @@ namespace BancoControzo
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Coral;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(169, 272);
+            this.btnLogin.Location = new System.Drawing.Point(41, 262);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(92, 54);
+            this.btnLogin.Size = new System.Drawing.Size(220, 46);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkSalmon;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(102, 353);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 31);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
@@ -110,6 +123,7 @@ namespace BancoControzo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(303, 396);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.label4);
@@ -136,6 +150,7 @@ namespace BancoControzo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button button1;
     }
 }
 

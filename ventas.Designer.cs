@@ -41,6 +41,21 @@ namespace BancoControzo
             this.label6 = new System.Windows.Forms.Label();
             this.btnAgregarProductoVenta = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtDireccionCliente = new System.Windows.Forms.TextBox();
+            this.txtTelefonoCliente = new System.Windows.Forms.TextBox();
+            this.txtMailCliente = new System.Windows.Forms.TextBox();
+            this.txtClienteNombre = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -146,7 +161,7 @@ namespace BancoControzo
             // 
             this.btnAgregarProductoVenta.BackColor = System.Drawing.Color.SandyBrown;
             this.btnAgregarProductoVenta.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProductoVenta.Location = new System.Drawing.Point(472, 412);
+            this.btnAgregarProductoVenta.Location = new System.Drawing.Point(322, 424);
             this.btnAgregarProductoVenta.Name = "btnAgregarProductoVenta";
             this.btnAgregarProductoVenta.Size = new System.Drawing.Size(122, 55);
             this.btnAgregarProductoVenta.TabIndex = 10;
@@ -157,7 +172,7 @@ namespace BancoControzo
             // 
             this.button1.BackColor = System.Drawing.Color.SandyBrown;
             this.button1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(612, 412);
+            this.button1.Location = new System.Drawing.Point(462, 424);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 55);
             this.button1.TabIndex = 11;
@@ -165,12 +180,151 @@ namespace BancoControzo
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Linen;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.txtBuscarCliente);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.txtDireccionCliente);
+            this.panel1.Controls.Add(this.txtTelefonoCliente);
+            this.panel1.Controls.Add(this.txtMailCliente);
+            this.panel1.Controls.Add(this.txtClienteNombre);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(608, 150);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(284, 285);
+            this.panel1.TabIndex = 12;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(160, 114);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 33);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(144, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(137, 15);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Buscar cliente(tel):";
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.Location = new System.Drawing.Point(168, 81);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscarCliente.TabIndex = 17;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SandyBrown;
+            this.button2.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(6, 236);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 33);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Agregar Cliente";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // txtDireccionCliente
+            // 
+            this.txtDireccionCliente.Location = new System.Drawing.Point(6, 210);
+            this.txtDireccionCliente.Name = "txtDireccionCliente";
+            this.txtDireccionCliente.Size = new System.Drawing.Size(154, 20);
+            this.txtDireccionCliente.TabIndex = 15;
+            // 
+            // txtTelefonoCliente
+            // 
+            this.txtTelefonoCliente.Location = new System.Drawing.Point(6, 160);
+            this.txtTelefonoCliente.Name = "txtTelefonoCliente";
+            this.txtTelefonoCliente.Size = new System.Drawing.Size(112, 20);
+            this.txtTelefonoCliente.TabIndex = 14;
+            // 
+            // txtMailCliente
+            // 
+            this.txtMailCliente.Location = new System.Drawing.Point(6, 114);
+            this.txtMailCliente.Name = "txtMailCliente";
+            this.txtMailCliente.Size = new System.Drawing.Size(112, 20);
+            this.txtMailCliente.TabIndex = 13;
+            // 
+            // txtClienteNombre
+            // 
+            this.txtClienteNombre.Location = new System.Drawing.Point(6, 61);
+            this.txtClienteNombre.Name = "txtClienteNombre";
+            this.txtClienteNombre.Size = new System.Drawing.Size(112, 20);
+            this.txtClienteNombre.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 192);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 15);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Direccion:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 142);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 15);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Telefono:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 15);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Email:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 43);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 15);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Nombres:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 18);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Datos del cliente:";
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(904, 511);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAgregarProductoVenta);
             this.Controls.Add(this.label6);
@@ -184,10 +338,12 @@ namespace BancoControzo
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Ventas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +363,19 @@ namespace BancoControzo
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAgregarProductoVenta;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTelefonoCliente;
+        private System.Windows.Forms.TextBox txtMailCliente;
+        private System.Windows.Forms.TextBox txtClienteNombre;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtDireccionCliente;
     }
 }

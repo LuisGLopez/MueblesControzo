@@ -19,12 +19,18 @@ namespace BancoControzo
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            using (Administrar nuevaVentana = new Administrar())
-            {
-                nuevaVentana.ShowDialog();
-            }
-                
 
+            using (Ventas nuevaVentana = new Ventas())
+            {
+                this.Visible = false;
+                nuevaVentana.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
