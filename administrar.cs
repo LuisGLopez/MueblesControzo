@@ -160,13 +160,8 @@ namespace BancoControzo
                 MySqlDataReader reader = commandDatabase.ExecuteReader();
 
                 dataBaseConnection.Close();
-                
-                txtNombreProducto.Text = "";
-                numPrecioProducto.Value = 0;
-                numExistenciasProducto.Value = 0;
-                txtColor.Text = "";
-                txtModelo.Text = "";
-                comboTipoProducto.SelectedIndex = -1;
+
+                limpiarCampos();
 
                 return 1;
             }
@@ -189,6 +184,10 @@ namespace BancoControzo
                     }
                 case 1:
                     {
+                        btnAgregarProducto.Enabled = false;
+                        btnEliminarProducto.Enabled = true;
+                        btnModificarProducto.Enabled = true;
+                        btnSalirBusquedaProducto.Enabled = true;
                         MessageBox.Show("Producto encontrado!", "Encontrado exitosamente!", botones);
                         break;
                     }
@@ -229,8 +228,6 @@ namespace BancoControzo
                 {
                     while (reader.Read())
                     {
-                        string[] productoEncontrado = { reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
-
                         txtNombreProducto.Text = reader.GetString(1);
                         numPrecioProducto.Value = Decimal.Parse( reader.GetString(2) );
                         numExistenciasProducto.Value = int.Parse( reader.GetString(3) );
@@ -240,6 +237,7 @@ namespace BancoControzo
                         comboTipoProducto.SelectedIndex = comboTipoProducto.FindString( reader.GetString(5) );
 
                         txtBuscarProducto.Text = "";
+
                     }
                 }
 
@@ -253,5 +251,26 @@ namespace BancoControzo
                 return 2;
             }
         }
+
+        private void btnSalirBusqueda_Click(object sender, EventArgs e)
+        {
+            btnAgregarProducto.Enabled = true;
+            btnEliminarProducto.Enabled = false;
+            btnModificarProducto.Enabled = false;
+            btnSalirBusquedaProducto.Enabled = false;
+
+            limpiarCampos();
+        }
+
+        private void limpiarCampos()
+        {
+            txtNombreProducto.Text = "";
+            numPrecioProducto.Value = 0;
+            numExistenciasProducto.Value = 0;
+            txtColor.Text = "";
+            txtModelo.Text = "";
+            comboTipoProducto.SelectedIndex = -1;
+        }
+
     }
 }
