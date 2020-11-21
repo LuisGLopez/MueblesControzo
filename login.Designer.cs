@@ -90,6 +90,7 @@ namespace BancoControzo
             // 
             this.txtContrasena.Location = new System.Drawing.Point(41, 218);
             this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(220, 20);
             this.txtContrasena.TabIndex = 5;
             // 
@@ -135,6 +136,7 @@ namespace BancoControzo
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
