@@ -13,6 +13,8 @@ namespace BancoControzo
 {
     public partial class Administrar : Form
     {
+        private int idProducto = -1;
+
         public Administrar()
         {
             InitializeComponent();
@@ -196,6 +198,11 @@ namespace BancoControzo
                         MessageBox.Show("Error intente de nuevo", "Error!", botones);
                         break;
                     }
+                case 3:
+                    {
+                        MessageBox.Show("El  producto no fue encontrado", "No encontrado!", botones);
+                        break;
+                    }
                 default:
                     MessageBox.Show("Error intente de nuevo", "Error!", botones);
                     break;
@@ -228,6 +235,8 @@ namespace BancoControzo
                 {
                     while (reader.Read())
                     {
+                        idProducto = int.Parse( reader.GetString(0) );
+
                         txtNombreProducto.Text = reader.GetString(1);
                         numPrecioProducto.Value = Decimal.Parse( reader.GetString(2) );
                         numExistenciasProducto.Value = int.Parse( reader.GetString(3) );
@@ -239,11 +248,12 @@ namespace BancoControzo
                         txtBuscarProducto.Text = "";
 
                     }
+                    return 1;
                 }
 
                 dataBaseConnection.Close();
 
-                return 1;
+                return 3;
             }
             catch (Exception ex)
             {
@@ -258,6 +268,8 @@ namespace BancoControzo
             btnEliminarProducto.Enabled = false;
             btnModificarProducto.Enabled = false;
             btnSalirBusquedaProducto.Enabled = false;
+
+            idProducto = -1;
 
             limpiarCampos();
         }
