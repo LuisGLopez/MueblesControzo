@@ -34,15 +34,13 @@ namespace BancoControzo
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnBuscarModeloProducto = new System.Windows.Forms.Button();
             this.btnBuscarNombreProducto = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.comboTipoProducto = new System.Windows.Forms.ComboBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
-            this.txtExistencias = new System.Windows.Forms.TextBox();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -100,11 +98,15 @@ namespace BancoControzo
             this.btnSalir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.numExistenciasProducto = new System.Windows.Forms.NumericUpDown();
+            this.numPrecioProducto = new System.Windows.Forms.NumericUpDown();
             this.tabProductos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numExistenciasProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecioProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -133,18 +135,18 @@ namespace BancoControzo
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.PeachPuff;
+            this.tabPage1.Controls.Add(this.numPrecioProducto);
+            this.tabPage1.Controls.Add(this.numExistenciasProducto);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.btnAgregar);
+            this.tabPage1.Controls.Add(this.btnAgregarProducto);
             this.tabPage1.Controls.Add(this.btnBuscarModeloProducto);
             this.tabPage1.Controls.Add(this.btnBuscarNombreProducto);
             this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Controls.Add(this.comboTipo);
+            this.tabPage1.Controls.Add(this.comboTipoProducto);
             this.tabPage1.Controls.Add(this.txtModelo);
-            this.tabPage1.Controls.Add(this.txtPrecio);
             this.tabPage1.Controls.Add(this.txtColor);
-            this.tabPage1.Controls.Add(this.txtExistencias);
             this.tabPage1.Controls.Add(this.txtNombreProducto);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
@@ -183,16 +185,17 @@ namespace BancoControzo
             this.button1.Text = "Eliminar producto";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnAgregar
+            // btnAgregarProducto
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(666, 80);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(128, 42);
-            this.btnAgregar.TabIndex = 25;
-            this.btnAgregar.Text = "Agregar producto";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProducto.Location = new System.Drawing.Point(666, 80);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(128, 42);
+            this.btnAgregarProducto.TabIndex = 25;
+            this.btnAgregarProducto.Text = "Agregar producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnBuscarModeloProducto
             // 
@@ -224,13 +227,40 @@ namespace BancoControzo
             this.txtBuscar.Size = new System.Drawing.Size(218, 23);
             this.txtBuscar.TabIndex = 22;
             // 
-            // comboTipo
+            // comboTipoProducto
             // 
-            this.comboTipo.FormattingEnabled = true;
-            this.comboTipo.Location = new System.Drawing.Point(35, 243);
-            this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(218, 23);
-            this.comboTipo.TabIndex = 21;
+            this.comboTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTipoProducto.FormattingEnabled = true;
+            this.comboTipoProducto.Items.AddRange(new object[] {
+            "SALA ESQUINERA",
+            "SALA 3, 2, 1",
+            "SALA MODULAR",
+            "SILLONES DECORATIVOS",
+            "SOFA CAMA",
+            "RECAMARA COMPLETA",
+            "CABECERA",
+            "BUROS",
+            "CAJONERAS",
+            "ESPEJOS",
+            "BASES PARA CAMA",
+            "LITERAS",
+            "COMEDOR COMPLETO",
+            "MESAS",
+            "SILLAS",
+            "BUFETERAS",
+            "BANCAS",
+            "BANCOS",
+            "ESCRITORIOS",
+            "LIBREROS",
+            "MESAS DE CENTRO",
+            "MUEBLES PARA TV",
+            "COJINES",
+            "LAMPARAS",
+            "PERCHEROS"});
+            this.comboTipoProducto.Location = new System.Drawing.Point(35, 243);
+            this.comboTipoProducto.Name = "comboTipoProducto";
+            this.comboTipoProducto.Size = new System.Drawing.Size(218, 23);
+            this.comboTipoProducto.TabIndex = 21;
             // 
             // txtModelo
             // 
@@ -239,26 +269,12 @@ namespace BancoControzo
             this.txtModelo.Size = new System.Drawing.Size(218, 23);
             this.txtModelo.TabIndex = 20;
             // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(363, 83);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(218, 23);
-            this.txtPrecio.TabIndex = 19;
-            // 
             // txtColor
             // 
             this.txtColor.Location = new System.Drawing.Point(363, 163);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(218, 23);
             this.txtColor.TabIndex = 18;
-            // 
-            // txtExistencias
-            // 
-            this.txtExistencias.Location = new System.Drawing.Point(35, 163);
-            this.txtExistencias.Name = "txtExistencias";
-            this.txtExistencias.Size = new System.Drawing.Size(218, 23);
-            this.txtExistencias.TabIndex = 17;
             // 
             // txtNombreProducto
             // 
@@ -840,6 +856,31 @@ namespace BancoControzo
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // numExistenciasProducto
+            // 
+            this.numExistenciasProducto.Location = new System.Drawing.Point(35, 169);
+            this.numExistenciasProducto.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numExistenciasProducto.Name = "numExistenciasProducto";
+            this.numExistenciasProducto.Size = new System.Drawing.Size(218, 23);
+            this.numExistenciasProducto.TabIndex = 29;
+            // 
+            // numPrecioProducto
+            // 
+            this.numPrecioProducto.DecimalPlaces = 2;
+            this.numPrecioProducto.Location = new System.Drawing.Point(363, 85);
+            this.numPrecioProducto.Maximum = new decimal(new int[] {
+            200000,
+            0,
+            0,
+            0});
+            this.numPrecioProducto.Name = "numPrecioProducto";
+            this.numPrecioProducto.Size = new System.Drawing.Size(218, 23);
+            this.numPrecioProducto.TabIndex = 30;
+            // 
             // Administrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -862,6 +903,8 @@ namespace BancoControzo
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numExistenciasProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecioProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -884,15 +927,13 @@ namespace BancoControzo
         private System.Windows.Forms.Button btnBuscarModeloProducto;
         private System.Windows.Forms.Button btnBuscarNombreProducto;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox comboTipo;
+        private System.Windows.Forms.ComboBox comboTipoProducto;
         private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtColor;
-        private System.Windows.Forms.TextBox txtExistencias;
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnGuardarEmpleado;
         private System.Windows.Forms.Button btnEliminarEmpleado;
         private System.Windows.Forms.Button btnAgregarEmpleado;
@@ -940,5 +981,7 @@ namespace BancoControzo
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.NumericUpDown numExistenciasProducto;
+        private System.Windows.Forms.NumericUpDown numPrecioProducto;
     }
 }

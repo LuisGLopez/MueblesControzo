@@ -118,8 +118,6 @@ namespace BancoControzo
                     while (reader.Read())
                     {
                         tipoUsuarios = reader.GetString(0);
-                        
-                        Console.WriteLine(tipoUsuarios);
                     }
 
                     dataBaseConnection.Close();

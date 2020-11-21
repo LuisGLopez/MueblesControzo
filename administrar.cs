@@ -102,5 +102,56 @@ namespace BancoControzo
         {
             this.Close();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            agregarProducto();
+        }
+
+        public int agregarProducto()
+        {
+            string nombreProd = txtNombreProducto.Text;
+            string precioProd = numPrecioProducto.Value.ToString();
+            string existenciasProd = numExistenciasProducto.Value.ToString();
+            string colorProd = txtColor.Text;
+            string modeloProd = txtModelo.Text;
+
+            Console.WriteLine(precioProd);
+            Console.WriteLine(existenciasProd);
+
+            // Revisar si todo tiene datos
+            if (nombreProd == "" || precioProd == "" || existenciasProd  == "" || colorProd == "" || modeloProd == "" || comboTipoProducto.SelectedIndex <= -1 )
+            {
+                return 0;
+            }
+            
+            return 0;
+            /*
+            string tipoProd = comboTipoProducto.SelectedItem.ToString();
+
+            string queryAgregar = "INSERT INTO producto(nombre_producto, precio_producto, existencias_producto, color, tipo_producto, modelo) VALUES ('" + "hola" + "',);";
+
+            string MySQLConectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=muebleria";
+
+            MySqlConnection dataBaseConnection = new MySqlConnection(MySQLConectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(queryAgregar, dataBaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                dataBaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+
+                dataBaseConnection.Close();
+
+
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 2;
+            }*/
+        }
     }
 }
