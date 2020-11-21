@@ -416,5 +416,60 @@ namespace BancoControzo
             }    
         }
 
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            DialogResult resultadoDialogo = MessageBox.Show("¿Esta seguro que desea eliminar este producto?", "Confirmación eliminar", MessageBoxButtons.YesNo);
+            if (resultadoDialogo == DialogResult.Yes)
+            {
+                if (eliminarProduto() == 1)
+                {
+                    btnAgregarProducto.Enabled = true;
+                    btnEliminarProducto.Enabled = false;
+                    btnModificarProducto.Enabled = false;
+                    btnSalirBusquedaProducto.Enabled = false;
+
+                    idProducto = -1;
+
+                    limpiarCampos();
+
+                    MessageBox.Show("Producto eliminado exitosamente!", "Eliminacion exitosa!", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Sucedio un error", "Error!", MessageBoxButtons.OK);
+                }
+            }
+            else if (resultadoDialogo == DialogResult.No)
+            {
+                MessageBox.Show("Eliminacion Cancelada", "Eliminacion Cancelada", MessageBoxButtons.OK);
+            }
+            
+        }
+
+        private int eliminarProduto()
+        {
+            string queryEliminar = "DELETE FROM producto WHERE id_producto = " + idProducto + ";";
+
+            string MySQLConectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=muebleria";
+
+            MySqlConnection dataBaseConnection = new MySqlConnection(MySQLConectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(queryEliminar, dataBaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                dataBaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+
+                dataBaseConnection.Close();
+
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 2;
+            }
+        }
     }
 }

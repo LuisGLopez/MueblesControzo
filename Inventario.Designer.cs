@@ -29,6 +29,7 @@ namespace BancoControzo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
             this.btnBuscarProductoModeloInventario = new System.Windows.Forms.Button();
             this.txtBuscarProductoInventario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,12 +42,12 @@ namespace BancoControzo
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtModeloSolicitar = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnSolicitar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtCantidadSolicitar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSolicitar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtModeloSolicitar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,32 +171,22 @@ namespace BancoControzo
             this.panel1.Size = new System.Drawing.Size(253, 248);
             this.panel1.TabIndex = 17;
             // 
-            // label5
+            // txtCantidadSolicitar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 18);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Solicitar producto:";
+            this.txtCantidadSolicitar.Location = new System.Drawing.Point(6, 146);
+            this.txtCantidadSolicitar.Name = "txtCantidadSolicitar";
+            this.txtCantidadSolicitar.Size = new System.Drawing.Size(229, 20);
+            this.txtCantidadSolicitar.TabIndex = 22;
             // 
-            // txtModeloSolicitar
+            // label7
             // 
-            this.txtModeloSolicitar.Location = new System.Drawing.Point(6, 76);
-            this.txtModeloSolicitar.Name = "txtModeloSolicitar";
-            this.txtModeloSolicitar.Size = new System.Drawing.Size(229, 20);
-            this.txtModeloSolicitar.TabIndex = 18;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(189, 18);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Modelo del producto:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 116);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(203, 18);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Cantidad del producto:";
             // 
             // btnSolicitar
             // 
@@ -208,22 +199,32 @@ namespace BancoControzo
             this.btnSolicitar.Text = "Solicitar";
             this.btnSolicitar.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // label6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 116);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 18);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Cantidad del producto:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(189, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Modelo del producto:";
             // 
-            // txtCantidadSolicitar
+            // txtModeloSolicitar
             // 
-            this.txtCantidadSolicitar.Location = new System.Drawing.Point(6, 146);
-            this.txtCantidadSolicitar.Name = "txtCantidadSolicitar";
-            this.txtCantidadSolicitar.Size = new System.Drawing.Size(229, 20);
-            this.txtCantidadSolicitar.TabIndex = 22;
+            this.txtModeloSolicitar.Location = new System.Drawing.Point(6, 76);
+            this.txtModeloSolicitar.Name = "txtModeloSolicitar";
+            this.txtModeloSolicitar.Size = new System.Drawing.Size(229, 20);
+            this.txtModeloSolicitar.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(166, 18);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Solicitar producto:";
             // 
             // Inventario
             // 
@@ -244,6 +245,7 @@ namespace BancoControzo
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Inventario";
             this.Text = " Inventario";

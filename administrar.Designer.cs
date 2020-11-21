@@ -29,6 +29,7 @@ namespace BancoControzo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrar));
             this.label1 = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -189,6 +190,7 @@ namespace BancoControzo
             this.btnEliminarProducto.TabIndex = 26;
             this.btnEliminarProducto.Text = "Eliminar producto";
             this.btnEliminarProducto.UseVisualStyleBackColor = false;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // btnAgregarProducto
             // 
@@ -910,6 +912,7 @@ namespace BancoControzo
             this.Controls.Add(this.tabProductos);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Administrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
