@@ -53,6 +53,9 @@ namespace BancoControzo
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.btnGuardarEmpleado = new System.Windows.Forms.Button();
             this.btnEliminarEmpleado = new System.Windows.Forms.Button();
             this.btnAgregarEmpleado = new System.Windows.Forms.Button();
@@ -72,26 +75,36 @@ namespace BancoControzo
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtSalario = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.btnGenerarReporte = new System.Windows.Forms.Button();
-            this.btnExportarReporte = new System.Windows.Forms.Button();
-            this.txtGastosEmpleados = new System.Windows.Forms.TextBox();
-            this.txtGastosProductos = new System.Windows.Forms.TextBox();
-            this.txtIngresos = new System.Windows.Forms.TextBox();
-            this.txtImpuestos = new System.Windows.Forms.TextBox();
             this.comboPeriodoTiempo = new System.Windows.Forms.ComboBox();
+            this.txtImpuestos = new System.Windows.Forms.TextBox();
+            this.txtIngresos = new System.Windows.Forms.TextBox();
+            this.txtGastosProductos = new System.Windows.Forms.TextBox();
+            this.txtGastosEmpleados = new System.Windows.Forms.TextBox();
+            this.btnExportarReporte = new System.Windows.Forms.Button();
+            this.btnGenerarReporte = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
+            this.txtContraseñaUsuario = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
+            this.comboTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btnSalirUsuarios = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabProductos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -109,6 +122,7 @@ namespace BancoControzo
             this.tabProductos.Controls.Add(this.tabPage1);
             this.tabProductos.Controls.Add(this.tabPage2);
             this.tabProductos.Controls.Add(this.tabPage3);
+            this.tabProductos.Controls.Add(this.tabPage4);
             this.tabProductos.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabProductos.Location = new System.Drawing.Point(0, 29);
             this.tabProductos.Name = "tabProductos";
@@ -119,6 +133,7 @@ namespace BancoControzo
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.PeachPuff;
+            this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.btnAgregar);
@@ -335,6 +350,7 @@ namespace BancoControzo
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.PeachPuff;
+            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.txtSalario);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label18);
@@ -363,6 +379,33 @@ namespace BancoControzo
             this.tabPage2.Size = new System.Drawing.Size(896, 473);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empleados";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(20, 302);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(218, 23);
+            this.txtSalario.TabIndex = 49;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(17, 281);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(71, 18);
+            this.label19.TabIndex = 48;
+            this.label19.Text = "Salario:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(345, 206);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(134, 18);
+            this.label18.TabIndex = 47;
+            this.label18.Text = "(AAAA-MM-DD)";
             // 
             // btnGuardarEmpleado
             // 
@@ -538,36 +581,10 @@ namespace BancoControzo
             this.label17.TabIndex = 28;
             this.label17.Text = "Empleados";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(345, 206);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(134, 18);
-            this.label18.TabIndex = 47;
-            this.label18.Text = "(AAAA-MM-DD)";
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(20, 302);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(218, 23);
-            this.txtSalario.TabIndex = 49;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(17, 281);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 18);
-            this.label19.TabIndex = 48;
-            this.label19.Text = "Salario:";
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.PeachPuff;
+            this.tabPage3.Controls.Add(this.btnSalir);
             this.tabPage3.Controls.Add(this.comboPeriodoTiempo);
             this.tabPage3.Controls.Add(this.txtImpuestos);
             this.tabPage3.Controls.Add(this.txtIngresos);
@@ -586,50 +603,51 @@ namespace BancoControzo
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Reportes";
             // 
-            // label20
+            // comboPeriodoTiempo
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(29, 44);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(138, 15);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Gastos empleados:";
+            this.comboPeriodoTiempo.FormattingEnabled = true;
+            this.comboPeriodoTiempo.Location = new System.Drawing.Point(345, 145);
+            this.comboPeriodoTiempo.Name = "comboPeriodoTiempo";
+            this.comboPeriodoTiempo.Size = new System.Drawing.Size(194, 23);
+            this.comboPeriodoTiempo.TabIndex = 12;
             // 
-            // label21
+            // txtImpuestos
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(342, 44);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(133, 15);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Gastos productos:";
+            this.txtImpuestos.Location = new System.Drawing.Point(32, 244);
+            this.txtImpuestos.Name = "txtImpuestos";
+            this.txtImpuestos.Size = new System.Drawing.Size(194, 23);
+            this.txtImpuestos.TabIndex = 11;
             // 
-            // label22
+            // txtIngresos
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(29, 226);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 15);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Impuestos:";
+            this.txtIngresos.Location = new System.Drawing.Point(32, 145);
+            this.txtIngresos.Name = "txtIngresos";
+            this.txtIngresos.Size = new System.Drawing.Size(194, 23);
+            this.txtIngresos.TabIndex = 10;
             // 
-            // label23
+            // txtGastosProductos
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(342, 127);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(140, 15);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Periodo de tiempo:";
+            this.txtGastosProductos.Location = new System.Drawing.Point(345, 65);
+            this.txtGastosProductos.Name = "txtGastosProductos";
+            this.txtGastosProductos.Size = new System.Drawing.Size(194, 23);
+            this.txtGastosProductos.TabIndex = 8;
             // 
-            // label24
+            // txtGastosEmpleados
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(29, 127);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(70, 15);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Ingresos:";
+            this.txtGastosEmpleados.Location = new System.Drawing.Point(32, 65);
+            this.txtGastosEmpleados.Name = "txtGastosEmpleados";
+            this.txtGastosEmpleados.Size = new System.Drawing.Size(194, 23);
+            this.txtGastosEmpleados.TabIndex = 7;
+            // 
+            // btnExportarReporte
+            // 
+            this.btnExportarReporte.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnExportarReporte.Location = new System.Drawing.Point(607, 244);
+            this.btnExportarReporte.Name = "btnExportarReporte";
+            this.btnExportarReporte.Size = new System.Drawing.Size(135, 62);
+            this.btnExportarReporte.TabIndex = 6;
+            this.btnExportarReporte.Text = "Exportar reporte";
+            this.btnExportarReporte.UseVisualStyleBackColor = false;
             // 
             // btnGenerarReporte
             // 
@@ -641,51 +659,186 @@ namespace BancoControzo
             this.btnGenerarReporte.Text = "Generar reporte";
             this.btnGenerarReporte.UseVisualStyleBackColor = false;
             // 
-            // btnExportarReporte
+            // label24
             // 
-            this.btnExportarReporte.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnExportarReporte.Location = new System.Drawing.Point(607, 292);
-            this.btnExportarReporte.Name = "btnExportarReporte";
-            this.btnExportarReporte.Size = new System.Drawing.Size(135, 62);
-            this.btnExportarReporte.TabIndex = 6;
-            this.btnExportarReporte.Text = "Exportar reporte";
-            this.btnExportarReporte.UseVisualStyleBackColor = false;
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(29, 127);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(70, 15);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Ingresos:";
             // 
-            // txtGastosEmpleados
+            // label23
             // 
-            this.txtGastosEmpleados.Location = new System.Drawing.Point(32, 65);
-            this.txtGastosEmpleados.Name = "txtGastosEmpleados";
-            this.txtGastosEmpleados.Size = new System.Drawing.Size(194, 23);
-            this.txtGastosEmpleados.TabIndex = 7;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(342, 127);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(140, 15);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Periodo de tiempo:";
             // 
-            // txtGastosProductos
+            // label22
             // 
-            this.txtGastosProductos.Location = new System.Drawing.Point(345, 65);
-            this.txtGastosProductos.Name = "txtGastosProductos";
-            this.txtGastosProductos.Size = new System.Drawing.Size(194, 23);
-            this.txtGastosProductos.TabIndex = 8;
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(29, 226);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 15);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Impuestos:";
             // 
-            // txtIngresos
+            // label21
             // 
-            this.txtIngresos.Location = new System.Drawing.Point(32, 145);
-            this.txtIngresos.Name = "txtIngresos";
-            this.txtIngresos.Size = new System.Drawing.Size(194, 23);
-            this.txtIngresos.TabIndex = 10;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(342, 44);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(133, 15);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Gastos productos:";
             // 
-            // txtImpuestos
+            // label20
             // 
-            this.txtImpuestos.Location = new System.Drawing.Point(32, 244);
-            this.txtImpuestos.Name = "txtImpuestos";
-            this.txtImpuestos.Size = new System.Drawing.Size(194, 23);
-            this.txtImpuestos.TabIndex = 11;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(29, 44);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(138, 15);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Gastos empleados:";
             // 
-            // comboPeriodoTiempo
+            // tabPage4
             // 
-            this.comboPeriodoTiempo.FormattingEnabled = true;
-            this.comboPeriodoTiempo.Location = new System.Drawing.Point(345, 145);
-            this.comboPeriodoTiempo.Name = "comboPeriodoTiempo";
-            this.comboPeriodoTiempo.Size = new System.Drawing.Size(194, 23);
-            this.comboPeriodoTiempo.TabIndex = 12;
+            this.tabPage4.BackColor = System.Drawing.Color.PeachPuff;
+            this.tabPage4.Controls.Add(this.btnSalirUsuarios);
+            this.tabPage4.Controls.Add(this.btnAgregarUsuario);
+            this.tabPage4.Controls.Add(this.txtContraseñaUsuario);
+            this.tabPage4.Controls.Add(this.txtNombreUsuario);
+            this.tabPage4.Controls.Add(this.comboTipoUsuario);
+            this.tabPage4.Controls.Add(this.label27);
+            this.tabPage4.Controls.Add(this.label26);
+            this.tabPage4.Controls.Add(this.label25);
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(896, 473);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Usuarios";
+            // 
+            // btnAgregarUsuario
+            // 
+            this.btnAgregarUsuario.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnAgregarUsuario.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(49, 322);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(112, 56);
+            this.btnAgregarUsuario.TabIndex = 16;
+            this.btnAgregarUsuario.Text = "Agregar usuario";
+            this.btnAgregarUsuario.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
+            // 
+            // txtContraseñaUsuario
+            // 
+            this.txtContraseñaUsuario.Location = new System.Drawing.Point(49, 197);
+            this.txtContraseñaUsuario.Name = "txtContraseñaUsuario";
+            this.txtContraseñaUsuario.PasswordChar = '*';
+            this.txtContraseñaUsuario.Size = new System.Drawing.Size(213, 23);
+            this.txtContraseñaUsuario.TabIndex = 15;
+            // 
+            // txtNombreUsuario
+            // 
+            this.txtNombreUsuario.Location = new System.Drawing.Point(49, 89);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(213, 23);
+            this.txtNombreUsuario.TabIndex = 14;
+            // 
+            // comboTipoUsuario
+            // 
+            this.comboTipoUsuario.BackColor = System.Drawing.Color.White;
+            this.comboTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTipoUsuario.FormattingEnabled = true;
+            this.comboTipoUsuario.Items.AddRange(new object[] {
+            "Administrador",
+            "Ventas",
+            "Inventario"});
+            this.comboTipoUsuario.Location = new System.Drawing.Point(363, 89);
+            this.comboTipoUsuario.Name = "comboTipoUsuario";
+            this.comboTipoUsuario.Size = new System.Drawing.Size(213, 23);
+            this.comboTipoUsuario.TabIndex = 13;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(360, 68);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(147, 18);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "Tipo de usuario:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(46, 176);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(109, 18);
+            this.label26.TabIndex = 11;
+            this.label26.Text = "Contraseña:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(46, 68);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(176, 18);
+            this.label25.TabIndex = 10;
+            this.label25.Text = "Nombre de usuario:";
+            // 
+            // btnSalirUsuarios
+            // 
+            this.btnSalirUsuarios.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnSalirUsuarios.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirUsuarios.Location = new System.Drawing.Point(732, 322);
+            this.btnSalirUsuarios.Name = "btnSalirUsuarios";
+            this.btnSalirUsuarios.Size = new System.Drawing.Size(112, 56);
+            this.btnSalirUsuarios.TabIndex = 17;
+            this.btnSalirUsuarios.Text = "Salir";
+            this.btnSalirUsuarios.UseVisualStyleBackColor = false;
+            this.btnSalirUsuarios.Click += new System.EventHandler(this.btnSalirUsuarios_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnSalir.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(630, 357);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(112, 56);
+            this.btnSalir.TabIndex = 18;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(691, 377);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(112, 56);
+            this.button3.TabIndex = 50;
+            this.button3.Text = "Salir";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.SandyBrown;
+            this.button4.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(776, 394);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(112, 56);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Salir";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Administrar
             // 
@@ -707,6 +860,8 @@ namespace BancoControzo
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -773,5 +928,17 @@ namespace BancoControzo
         private System.Windows.Forms.TextBox txtIngresos;
         private System.Windows.Forms.TextBox txtGastosProductos;
         private System.Windows.Forms.TextBox txtGastosEmpleados;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TextBox txtContraseñaUsuario;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
+        private System.Windows.Forms.ComboBox comboTipoUsuario;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btnAgregarUsuario;
+        private System.Windows.Forms.Button btnSalirUsuarios;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

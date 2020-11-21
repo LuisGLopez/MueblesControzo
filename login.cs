@@ -13,6 +13,8 @@ namespace BancoControzo
 {
     public partial class Login : Form
     {
+        string tipoUsuarios = "";
+
         public Login()
         {
             InitializeComponent();
@@ -30,12 +32,43 @@ namespace BancoControzo
                     }
                 case 1:
                     {
-                        using (Administrar nuevaVentana = new Administrar())
+                        switch (tipoUsuarios)
                         {
-                            this.Visible = false;
-                            nuevaVentana.ShowDialog();
-                            this.Close();
+                            case "Administrador":
+                                {
+                                    using (Administrar nuevaVentana = new Administrar())
+                                    {
+                                        this.Visible = false;
+                                        nuevaVentana.ShowDialog();
+                                        this.Close();
+                                    }
+                                    break;
+                                }
+                            case "Ventas":
+                                {
+                                    using (Ventas nuevaVentana = new Ventas())
+                                    {
+                                        this.Visible = false;
+                                        nuevaVentana.ShowDialog();
+                                        this.Close();
+                                    }
+                                    break;
+                                }
+                            case "Inventario":
+                                {
+                                    using (Inventario nuevaVentana = new Inventario())
+                                    {
+                                        this.Visible = false;
+                                        nuevaVentana.ShowDialog();
+                                        this.Close();
+                                    }
+                                    break;
+                                }
+                            default:
+                                MessageBox.Show("Sucedio un error\nIntentar nuevamente.", "Error.", botones);
+                                break;
                         }
+                        
                         break;
                     }
                 case 2:
@@ -66,7 +99,7 @@ namespace BancoControzo
             string nombre = txtNombre.Text;
             string password = txtContrasena.Text;
 
-            string queryBuscar = "SELECT username, passwd FROM usuarios WHERE (username='" + nombre + "'AND passwd=sha2('" + password + "', 384))";
+            string queryBuscar = "SELECT tipo_usuario FROM usuarios WHERE (username='" + nombre + "'AND passwd=sha2('" + password + "', 384))";
 
             string MySQLConectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=muebleria";
 
@@ -82,13 +115,18 @@ namespace BancoControzo
 
                 if (reader.HasRows)
                 {
-                    return 1;
-                    /*
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8) };
-                        Console.WriteLine(row.GetValue(2));
+                        tipoUsuarios = reader.GetString(0);
+                        
+                        Console.WriteLine(tipoUsuarios);
                     }
+
+                    dataBaseConnection.Close();
+
+                    return 1;
+                    /*
+                    
                     */
                 }
                 
