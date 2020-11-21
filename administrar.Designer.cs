@@ -176,6 +176,7 @@ namespace BancoControzo
             this.btnModificarProducto.TabIndex = 27;
             this.btnModificarProducto.Text = "Guardar modificaciones";
             this.btnModificarProducto.UseVisualStyleBackColor = false;
+            this.btnModificarProducto.Click += new System.EventHandler(this.btnModificarProducto_Click);
             // 
             // btnEliminarProducto
             // 
@@ -224,6 +225,7 @@ namespace BancoControzo
             this.btnBuscarNombreProducto.TabIndex = 23;
             this.btnBuscarNombreProducto.Text = "Buscar por nombre";
             this.btnBuscarNombreProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarNombreProducto.Click += new System.EventHandler(this.btnBuscarNombreProducto_Click);
             // 
             // txtBuscarProducto
             // 

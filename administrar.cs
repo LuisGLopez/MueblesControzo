@@ -177,7 +177,7 @@ namespace BancoControzo
         private void btnBuscarModeloProducto_Click(object sender, EventArgs e)
         {
             MessageBoxButtons botones = MessageBoxButtons.OK;
-            switch (buscarProducto())
+            switch (buscarProducto(true))
             {
                 case 0:
                     {
@@ -210,7 +210,7 @@ namespace BancoControzo
             
         }
 
-        private int buscarProducto()
+        private int buscarProducto(Boolean esModelo)
         {
             if (txtBuscarProducto.Text == "")
             {
@@ -218,8 +218,18 @@ namespace BancoControzo
             }
 
             string productoBuscar = txtBuscarProducto.Text.ToUpper();
-            //string[] productoEncontrado;
-            string queryBuscar = "SELECT * FROM producto WHERE modelo = '" + productoBuscar + "';";
+            string queryBuscar = "";
+            
+            if (esModelo)
+            {
+                queryBuscar = "SELECT * FROM producto WHERE modelo = '" + productoBuscar + "';";
+            }
+            else
+            {
+                queryBuscar = "SELECT * FROM producto WHERE nombre_producto = '" + productoBuscar + "';";
+            }
+                
+            
             string MySQLConectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=muebleria";
 
             MySqlConnection dataBaseConnection = new MySqlConnection(MySQLConectionString);
@@ -282,6 +292,128 @@ namespace BancoControzo
             txtColor.Text = "";
             txtModelo.Text = "";
             comboTipoProducto.SelectedIndex = -1;
+        }
+
+        private void btnBuscarNombreProducto_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons botones = MessageBoxButtons.OK;
+            switch (buscarProducto(false))
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Favor de llenar el campo de busqueda.", "Datos incompletos!", botones);
+                        break;
+                    }
+                case 1:
+                    {
+                        btnAgregarProducto.Enabled = false;
+                        btnEliminarProducto.Enabled = true;
+                        btnModificarProducto.Enabled = true;
+                        btnSalirBusquedaProducto.Enabled = true;
+                        MessageBox.Show("Producto encontrado!", "Encontrado exitosamente!", botones);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                        break;
+                    }
+                case 3:
+                    {
+                        MessageBox.Show("El  producto no fue encontrado", "No encontrado!", botones);
+                        break;
+                    }
+                default:
+                    MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                    break;
+            }
+        }
+
+        private void btnModificarProducto_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons botones = MessageBoxButtons.OK;
+            switch (modificarProducto())
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Favor de llenar todos los campos.", "Datos incompletos!", botones);
+                        break;
+                    }
+                case 1:
+                    {
+                        btnAgregarProducto.Enabled = true;
+                        btnEliminarProducto.Enabled = false;
+                        btnModificarProducto.Enabled = false;
+                        btnSalirBusquedaProducto.Enabled = false;
+
+                        idProducto = -1;
+
+                        limpiarCampos();
+
+                        MessageBox.Show("Producto modificado!", "Modificado exitosamente!", botones);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                        break;
+                    }
+                case 3:
+                    {
+                        MessageBox.Show("El  producto no fue encontrado", "No encontrado!", botones);
+                        break;
+                    }
+                default:
+                    MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                    break;
+            }
+        }
+
+        private int modificarProducto()
+        {
+            string nombreProd = txtNombreProducto.Text.ToUpper();
+            string precioProd = numPrecioProducto.Value.ToString();
+            string existenciasProd = numExistenciasProducto.Value.ToString();
+            string colorProd = txtColor.Text.ToUpper();
+            string modeloProd = txtModelo.Text.ToUpper();
+
+            // Revisar si todo tiene datos
+            if (nombreProd == "" || precioProd == "" || existenciasProd == "" || colorProd == "" || modeloProd == "" || comboTipoProducto.SelectedIndex <= -1 || precioProd == "0" || existenciasProd == "0")
+            {
+                return 0;
+            }
+
+            string tipoProd = comboTipoProducto.SelectedItem.ToString();
+
+            string queryModificar = "UPDATE producto " +
+                                    "SET nombre_producto = '" + nombreProd + "', " +
+                                        "precio_producto = " + precioProd + ", " +
+                                        "existencias_producto = " + existenciasProd + ", " +
+                                        "color = '" + colorProd + "', " +
+                                        "tipo_producto = '" + tipoProd + "', " +
+                                        "modelo = '" + modeloProd + "' " +
+                                    "WHERE id_producto = " + idProducto + ";";
+
+            string MySQLConectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=muebleria";
+
+            MySqlConnection dataBaseConnection = new MySqlConnection(MySQLConectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(queryModificar, dataBaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                dataBaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+
+                dataBaseConnection.Close();
+
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 2;
+            }    
         }
 
     }
