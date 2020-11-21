@@ -105,31 +105,48 @@ namespace BancoControzo
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            agregarProducto();
+            MessageBoxButtons botones = MessageBoxButtons.OK;
+            switch (agregarProducto())
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Favor de llenar los campos necesarios.", "Datos incompletos!", botones);
+                        break;
+                    }
+                case 1:
+                    {
+                        MessageBox.Show("Producto agregado con exito!", "Agregado exitosamente!", botones);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                        break;
+                    }
+                default:
+                    MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                    break;
+            }
         }
 
         public int agregarProducto()
         {
-            string nombreProd = txtNombreProducto.Text;
+            string nombreProd = txtNombreProducto.Text.ToUpper();
             string precioProd = numPrecioProducto.Value.ToString();
             string existenciasProd = numExistenciasProducto.Value.ToString();
-            string colorProd = txtColor.Text;
-            string modeloProd = txtModelo.Text;
-
-            Console.WriteLine(precioProd);
-            Console.WriteLine(existenciasProd);
+            string colorProd = txtColor.Text.ToUpper();
+            string modeloProd = txtModelo.Text.ToUpper();
 
             // Revisar si todo tiene datos
-            if (nombreProd == "" || precioProd == "" || existenciasProd  == "" || colorProd == "" || modeloProd == "" || comboTipoProducto.SelectedIndex <= -1 )
+            if (nombreProd == "" || precioProd == "" || existenciasProd  == "" || colorProd == "" || modeloProd == "" || comboTipoProducto.SelectedIndex <= -1 || precioProd == "0" || existenciasProd == "0")
             {
                 return 0;
             }
             
-            return 0;
-            /*
             string tipoProd = comboTipoProducto.SelectedItem.ToString();
 
-            string queryAgregar = "INSERT INTO producto(nombre_producto, precio_producto, existencias_producto, color, tipo_producto, modelo) VALUES ('" + "hola" + "',);";
+            string queryAgregar = "INSERT INTO producto(nombre_producto, precio_producto, existencias_producto, color, tipo_producto, modelo)" +
+                " VALUES ('" + nombreProd + "', " + precioProd + ", " + existenciasProd + ", '" + colorProd + "', '" + tipoProd + "', '" + modeloProd + "');";
 
             string MySQLConectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=muebleria";
 
@@ -143,7 +160,13 @@ namespace BancoControzo
                 MySqlDataReader reader = commandDatabase.ExecuteReader();
 
                 dataBaseConnection.Close();
-
+                
+                txtNombreProducto.Text = "";
+                numPrecioProducto.Value = 0;
+                numExistenciasProducto.Value = 0;
+                txtColor.Text = "";
+                txtModelo.Text = "";
+                comboTipoProducto.SelectedIndex = -1;
 
                 return 1;
             }
@@ -151,7 +174,84 @@ namespace BancoControzo
             {
                 MessageBox.Show(ex.Message);
                 return 2;
-            }*/
+            }
+        }
+
+        private void btnBuscarModeloProducto_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons botones = MessageBoxButtons.OK;
+            switch (buscarProducto())
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Favor de llenar el campo de busqueda.", "Datos incompletos!", botones);
+                        break;
+                    }
+                case 1:
+                    {
+                        MessageBox.Show("Producto encontrado!", "Encontrado exitosamente!", botones);
+                        break;
+                    }
+                case 2:
+                    {
+                        MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                        break;
+                    }
+                default:
+                    MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                    break;
+            }
+            
+        }
+
+        private int buscarProducto()
+        {
+            if (txtBuscarProducto.Text == "")
+            {
+                return 0;
+            }
+
+            string productoBuscar = txtBuscarProducto.Text.ToUpper();
+            //string[] productoEncontrado;
+            string queryBuscar = "SELECT * FROM producto WHERE modelo = '" + productoBuscar + "';";
+            string MySQLConectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=muebleria";
+
+            MySqlConnection dataBaseConnection = new MySqlConnection(MySQLConectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(queryBuscar, dataBaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                dataBaseConnection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string[] productoEncontrado = { reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
+
+                        txtNombreProducto.Text = reader.GetString(1);
+                        numPrecioProducto.Value = Decimal.Parse( reader.GetString(2) );
+                        numExistenciasProducto.Value = int.Parse( reader.GetString(3) );
+                        txtColor.Text = reader.GetString(4);
+                        txtModelo.Text = reader.GetString(6);
+
+                        comboTipoProducto.SelectedIndex = comboTipoProducto.FindString( reader.GetString(5) );
+
+                        txtBuscarProducto.Text = "";
+                    }
+                }
+
+                dataBaseConnection.Close();
+
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 2;
+            }
         }
     }
 }

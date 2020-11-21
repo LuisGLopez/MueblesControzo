@@ -37,7 +37,7 @@ namespace BancoControzo
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnBuscarModeloProducto = new System.Windows.Forms.Button();
             this.btnBuscarNombreProducto = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.comboTipoProducto = new System.Windows.Forms.ComboBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
@@ -143,7 +143,7 @@ namespace BancoControzo
             this.tabPage1.Controls.Add(this.btnAgregarProducto);
             this.tabPage1.Controls.Add(this.btnBuscarModeloProducto);
             this.tabPage1.Controls.Add(this.btnBuscarNombreProducto);
-            this.tabPage1.Controls.Add(this.txtBuscar);
+            this.tabPage1.Controls.Add(this.txtBuscarProducto);
             this.tabPage1.Controls.Add(this.comboTipoProducto);
             this.tabPage1.Controls.Add(this.txtModelo);
             this.tabPage1.Controls.Add(this.txtColor);
@@ -208,6 +208,7 @@ namespace BancoControzo
             this.btnBuscarModeloProducto.TabIndex = 24;
             this.btnBuscarModeloProducto.Text = "Buscar por modelo";
             this.btnBuscarModeloProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarModeloProducto.Click += new System.EventHandler(this.btnBuscarModeloProducto_Click);
             // 
             // btnBuscarNombreProducto
             // 
@@ -220,12 +221,12 @@ namespace BancoControzo
             this.btnBuscarNombreProducto.Text = "Buscar por nombre";
             this.btnBuscarNombreProducto.UseVisualStyleBackColor = false;
             // 
-            // txtBuscar
+            // txtBuscarProducto
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(189, 409);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(218, 23);
-            this.txtBuscar.TabIndex = 22;
+            this.txtBuscarProducto.Location = new System.Drawing.Point(189, 409);
+            this.txtBuscarProducto.Name = "txtBuscarProducto";
+            this.txtBuscarProducto.Size = new System.Drawing.Size(218, 23);
+            this.txtBuscarProducto.TabIndex = 22;
             // 
             // comboTipoProducto
             // 
@@ -926,7 +927,7 @@ namespace BancoControzo
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnBuscarModeloProducto;
         private System.Windows.Forms.Button btnBuscarNombreProducto;
-        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.TextBox txtBuscarProducto;
         private System.Windows.Forms.ComboBox comboTipoProducto;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtColor;
