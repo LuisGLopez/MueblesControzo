@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -73,7 +74,12 @@ namespace BancoControzo
                     }
                 case 2:
                     {
-                        MessageBox.Show("Falto poner usuario/contraseña\nO la longitud de los datos es muy largo.", "Campos vacios.", botones);
+                        MessageBox.Show("Falto poner usuario/contraseña\nO la longitud de los datos es muy largo.", "Campos vacios o exceden la longitud..", botones);
+                        break;
+                    }
+                case 3:
+                    {
+                        MessageBox.Show("El nombre de usuario cuenta con caracteres diferentes a letras", "Nombre con caracteres especiales.", botones);
                         break;
                     }
                 default:
@@ -96,6 +102,12 @@ namespace BancoControzo
             {
                 return 2;
             }
+
+            if ( !Regex.IsMatch(txtNombre.Text, @"^[\p{L}]+$") )
+            {
+                return 3;
+            }
+
             string nombre = txtNombre.Text;
             string password = txtContrasena.Text;
 

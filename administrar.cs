@@ -42,11 +42,11 @@ namespace BancoControzo
                     }
                 case 2:
                     {
-                        MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                        MessageBox.Show("Error intente de nuevo.", "Error!", botones);
                         break;
                     }
                 default:
-                    MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                    MessageBox.Show("Error intente de nuevo.", "Error!", botones);
                     break;
             }
         }
@@ -122,7 +122,7 @@ namespace BancoControzo
                     }
                 case 2:
                     {
-                        MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                        MessageBox.Show("Error intente de nuevo,\nel error podria ser un modelo repetido.", "Error!", botones);
                         break;
                     }
                 default:
@@ -355,7 +355,7 @@ namespace BancoControzo
                     }
                 case 2:
                     {
-                        MessageBox.Show("Error intente de nuevo", "Error!", botones);
+                        MessageBox.Show("Error intente de nuevo,\nEl error podria ser un modelo repetido.", "Error!", botones);
                         break;
                     }
                 case 3:
