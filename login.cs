@@ -73,7 +73,7 @@ namespace BancoControzo
                     }
                 case 2:
                     {
-                        MessageBox.Show("Falto poner usuario o contraseña.", "Campos vacios.", botones);
+                        MessageBox.Show("Falto poner usuario/contraseña\nO la longitud de los datos es muy largo.", "Campos vacios.", botones);
                         break;
                     }
                 default:
@@ -92,7 +92,7 @@ namespace BancoControzo
 
         private int ingresarCuenta()
         {
-            if (txtNombre.Text == "" || txtContrasena.Text == "")
+            if (txtNombre.Text == "" || txtContrasena.Text == "" || txtNombre.Text.Length > 127 || txtContrasena.Text.Length > 99)
             {
                 return 2;
             }
