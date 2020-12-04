@@ -33,6 +33,10 @@ namespace BancoControzo
             this.label1 = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSalirBusquedaProducto = new System.Windows.Forms.Button();
+            this.numPrecioProducto = new System.Windows.Forms.NumericUpDown();
+            this.numExistenciasProducto = new System.Windows.Forms.NumericUpDown();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
@@ -52,6 +56,7 @@ namespace BancoControzo
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -75,6 +80,7 @@ namespace BancoControzo
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.comboPeriodoTiempo = new System.Windows.Forms.ComboBox();
             this.txtImpuestos = new System.Windows.Forms.TextBox();
             this.txtIngresos = new System.Windows.Forms.TextBox();
@@ -88,6 +94,7 @@ namespace BancoControzo
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnSalirUsuarios = new System.Windows.Forms.Button();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.txtContraseñaUsuario = new System.Windows.Forms.TextBox();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
@@ -95,20 +102,13 @@ namespace BancoControzo
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnSalirUsuarios = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.numExistenciasProducto = new System.Windows.Forms.NumericUpDown();
-            this.numPrecioProducto = new System.Windows.Forms.NumericUpDown();
-            this.btnSalirBusquedaProducto = new System.Windows.Forms.Button();
             this.tabProductos.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecioProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numExistenciasProducto)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExistenciasProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrecioProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -165,6 +165,56 @@ namespace BancoControzo
             this.tabPage1.Size = new System.Drawing.Size(896, 473);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Productos";
+            // 
+            // btnSalirBusquedaProducto
+            // 
+            this.btnSalirBusquedaProducto.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnSalirBusquedaProducto.Enabled = false;
+            this.btnSalirBusquedaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirBusquedaProducto.Location = new System.Drawing.Point(666, 282);
+            this.btnSalirBusquedaProducto.Name = "btnSalirBusquedaProducto";
+            this.btnSalirBusquedaProducto.Size = new System.Drawing.Size(128, 52);
+            this.btnSalirBusquedaProducto.TabIndex = 31;
+            this.btnSalirBusquedaProducto.Text = "Salir busqueda";
+            this.btnSalirBusquedaProducto.UseVisualStyleBackColor = false;
+            this.btnSalirBusquedaProducto.Click += new System.EventHandler(this.btnSalirBusqueda_Click);
+            // 
+            // numPrecioProducto
+            // 
+            this.numPrecioProducto.DecimalPlaces = 2;
+            this.numPrecioProducto.Location = new System.Drawing.Point(363, 85);
+            this.numPrecioProducto.Maximum = new decimal(new int[] {
+            200000,
+            0,
+            0,
+            0});
+            this.numPrecioProducto.Name = "numPrecioProducto";
+            this.numPrecioProducto.Size = new System.Drawing.Size(218, 23);
+            this.numPrecioProducto.TabIndex = 30;
+            // 
+            // numExistenciasProducto
+            // 
+            this.numExistenciasProducto.Location = new System.Drawing.Point(35, 169);
+            this.numExistenciasProducto.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numExistenciasProducto.Name = "numExistenciasProducto";
+            this.numExistenciasProducto.Size = new System.Drawing.Size(218, 23);
+            this.numExistenciasProducto.TabIndex = 29;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.SandyBrown;
+            this.button4.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(776, 394);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(112, 56);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Salir";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnModificarProducto
             // 
@@ -405,6 +455,18 @@ namespace BancoControzo
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empleados";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(691, 377);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(112, 56);
+            this.button3.TabIndex = 50;
+            this.button3.Text = "Salir";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // txtSalario
             // 
             this.txtSalario.Location = new System.Drawing.Point(20, 302);
@@ -628,6 +690,18 @@ namespace BancoControzo
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Reportes";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnSalir.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(630, 357);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(112, 56);
+            this.btnSalir.TabIndex = 18;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // comboPeriodoTiempo
             // 
             this.comboPeriodoTiempo.FormattingEnabled = true;
@@ -746,6 +820,18 @@ namespace BancoControzo
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Usuarios";
             // 
+            // btnSalirUsuarios
+            // 
+            this.btnSalirUsuarios.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnSalirUsuarios.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirUsuarios.Location = new System.Drawing.Point(732, 322);
+            this.btnSalirUsuarios.Name = "btnSalirUsuarios";
+            this.btnSalirUsuarios.Size = new System.Drawing.Size(112, 56);
+            this.btnSalirUsuarios.TabIndex = 17;
+            this.btnSalirUsuarios.Text = "Salir";
+            this.btnSalirUsuarios.UseVisualStyleBackColor = false;
+            this.btnSalirUsuarios.Click += new System.EventHandler(this.btnSalirUsuarios_Click);
+            // 
             // btnAgregarUsuario
             // 
             this.btnAgregarUsuario.BackColor = System.Drawing.Color.SandyBrown;
@@ -817,92 +903,6 @@ namespace BancoControzo
             this.label25.TabIndex = 10;
             this.label25.Text = "Nombre de usuario:";
             // 
-            // btnSalirUsuarios
-            // 
-            this.btnSalirUsuarios.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnSalirUsuarios.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalirUsuarios.Location = new System.Drawing.Point(732, 322);
-            this.btnSalirUsuarios.Name = "btnSalirUsuarios";
-            this.btnSalirUsuarios.Size = new System.Drawing.Size(112, 56);
-            this.btnSalirUsuarios.TabIndex = 17;
-            this.btnSalirUsuarios.Text = "Salir";
-            this.btnSalirUsuarios.UseVisualStyleBackColor = false;
-            this.btnSalirUsuarios.Click += new System.EventHandler(this.btnSalirUsuarios_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnSalir.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(630, 357);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(112, 56);
-            this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(691, 377);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 56);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "Salir";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(776, 394);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 56);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Salir";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // numExistenciasProducto
-            // 
-            this.numExistenciasProducto.Location = new System.Drawing.Point(35, 169);
-            this.numExistenciasProducto.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numExistenciasProducto.Name = "numExistenciasProducto";
-            this.numExistenciasProducto.Size = new System.Drawing.Size(218, 23);
-            this.numExistenciasProducto.TabIndex = 29;
-            // 
-            // numPrecioProducto
-            // 
-            this.numPrecioProducto.DecimalPlaces = 2;
-            this.numPrecioProducto.Location = new System.Drawing.Point(363, 85);
-            this.numPrecioProducto.Maximum = new decimal(new int[] {
-            200000,
-            0,
-            0,
-            0});
-            this.numPrecioProducto.Name = "numPrecioProducto";
-            this.numPrecioProducto.Size = new System.Drawing.Size(218, 23);
-            this.numPrecioProducto.TabIndex = 30;
-            // 
-            // btnSalirBusquedaProducto
-            // 
-            this.btnSalirBusquedaProducto.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnSalirBusquedaProducto.Enabled = false;
-            this.btnSalirBusquedaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalirBusquedaProducto.Location = new System.Drawing.Point(666, 282);
-            this.btnSalirBusquedaProducto.Name = "btnSalirBusquedaProducto";
-            this.btnSalirBusquedaProducto.Size = new System.Drawing.Size(128, 52);
-            this.btnSalirBusquedaProducto.TabIndex = 31;
-            this.btnSalirBusquedaProducto.Text = "Salir busqueda";
-            this.btnSalirBusquedaProducto.UseVisualStyleBackColor = false;
-            this.btnSalirBusquedaProducto.Click += new System.EventHandler(this.btnSalirBusqueda_Click);
-            // 
             // Administrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -920,14 +920,14 @@ namespace BancoControzo
             this.tabProductos.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecioProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numExistenciasProducto)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExistenciasProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrecioProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

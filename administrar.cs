@@ -45,6 +45,11 @@ namespace BancoControzo
                         MessageBox.Show("Error intente de nuevo.", "Error!", botones);
                         break;
                     }
+                case 3:
+                    {
+                        MessageBox.Show("Alguno de los campos es demasiado largo.", "Error!", botones);
+                        break;
+                    }
                 default:
                     MessageBox.Show("Error intente de nuevo.", "Error!", botones);
                     break;
@@ -60,6 +65,12 @@ namespace BancoControzo
             {
                 return 0;
             }
+
+            if (nombre.Length > 126 || passwd.Length > 99)
+            {
+                return 3;
+            }
+
             string tipo = comboTipoUsuario.SelectedItem.ToString();
 
             string queryAgregar = "INSERT INTO usuarios(username, passwd, tipo_usuario) VALUES('" + nombre + "', SHA2('" + passwd + "', 384), '" + tipo + "');";
@@ -378,7 +389,7 @@ namespace BancoControzo
             string modeloProd = txtModelo.Text.ToUpper();
 
             // Revisar si todo tiene datos
-            if (nombreProd == "" || precioProd == "" || existenciasProd == "" || colorProd == "" || modeloProd == "" || comboTipoProducto.SelectedIndex <= -1 || precioProd == "0" || existenciasProd == "0")
+            if (nombreProd == "" || precioProd == "" || existenciasProd == "" || colorProd == "" || modeloProd == "" || comboTipoProducto.SelectedIndex <= -1 || precioProd == "0"|| precioProd  == "0.00")
             {
                 return 0;
             }
@@ -471,5 +482,6 @@ namespace BancoControzo
                 return 2;
             }
         }
+
     }
 }
